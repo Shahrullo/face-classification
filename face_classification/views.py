@@ -10,7 +10,7 @@ from torchvision import models
 from torchvision import transforms
 from PIL import Image
 from django.conf import settings
-from django.shortcuts import  render
+from django.shortcuts import render
 
 from .forms import ImageUploadForm
 import pretrainedmodels
@@ -21,8 +21,8 @@ device = torch.device('cpu')
 
 # load mapping of ImageNet index to human-readable label (from staticfiles directory)
 # run "python manage.py collectstatic" to ensure all static files are copied to the STATICFILES_DIRS
-json_path = os.path.join(settings.STATIC_ROOT, 'imagenet_class_index.json')
-imagenet_mapping = json.load(open(json_path))
+# json_path = os.path.join(settings.STATIC_ROOT, 'imagenet_class_index.json')
+# imagenet_mapping = json.load(open(json_path))
 
 mapping_age, mapping_gender, mapping_race = mappings()
 
